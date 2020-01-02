@@ -31730,7 +31730,265 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"Home.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"node_modules/toggle-selection/index.js":[function(require,module,exports) {
+
+module.exports = function () {
+  var selection = document.getSelection();
+  if (!selection.rangeCount) {
+    return function () {};
+  }
+  var active = document.activeElement;
+
+  var ranges = [];
+  for (var i = 0; i < selection.rangeCount; i++) {
+    ranges.push(selection.getRangeAt(i));
+  }
+
+  switch (active.tagName.toUpperCase()) { // .toUpperCase handles XHTML
+    case 'INPUT':
+    case 'TEXTAREA':
+      active.blur();
+      break;
+
+    default:
+      active = null;
+      break;
+  }
+
+  selection.removeAllRanges();
+  return function () {
+    selection.type === 'Caret' &&
+    selection.removeAllRanges();
+
+    if (!selection.rangeCount) {
+      ranges.forEach(function(range) {
+        selection.addRange(range);
+      });
+    }
+
+    active &&
+    active.focus();
+  };
+};
+
+},{}],"node_modules/copy-to-clipboard/index.js":[function(require,module,exports) {
+"use strict";
+
+var deselectCurrent = require("toggle-selection");
+
+var defaultMessage = "Copy to clipboard: #{key}, Enter";
+
+function format(message) {
+  var copyKey = (/mac os x/i.test(navigator.userAgent) ? "⌘" : "Ctrl") + "+C";
+  return message.replace(/#{\s*key\s*}/g, copyKey);
+}
+
+function copy(text, options) {
+  var debug,
+    message,
+    reselectPrevious,
+    range,
+    selection,
+    mark,
+    success = false;
+  if (!options) {
+    options = {};
+  }
+  debug = options.debug || false;
+  try {
+    reselectPrevious = deselectCurrent();
+
+    range = document.createRange();
+    selection = document.getSelection();
+
+    mark = document.createElement("span");
+    mark.textContent = text;
+    // reset user styles for span element
+    mark.style.all = "unset";
+    // prevents scrolling to the end of the page
+    mark.style.position = "fixed";
+    mark.style.top = 0;
+    mark.style.clip = "rect(0, 0, 0, 0)";
+    // used to preserve spaces and line breaks
+    mark.style.whiteSpace = "pre";
+    // do not inherit user-select (it may be `none`)
+    mark.style.webkitUserSelect = "text";
+    mark.style.MozUserSelect = "text";
+    mark.style.msUserSelect = "text";
+    mark.style.userSelect = "text";
+    mark.addEventListener("copy", function(e) {
+      e.stopPropagation();
+      if (options.format) {
+        e.preventDefault();
+        e.clipboardData.clearData();
+        e.clipboardData.setData(options.format, text);
+      }
+    });
+
+    document.body.appendChild(mark);
+
+    range.selectNodeContents(mark);
+    selection.addRange(range);
+
+    var successful = document.execCommand("copy");
+    if (!successful) {
+      throw new Error("copy command was unsuccessful");
+    }
+    success = true;
+  } catch (err) {
+    debug && console.error("unable to copy using execCommand: ", err);
+    debug && console.warn("trying IE specific stuff");
+    try {
+      window.clipboardData.setData(options.format || "text", text);
+      success = true;
+    } catch (err) {
+      debug && console.error("unable to copy using clipboardData: ", err);
+      debug && console.error("falling back to prompt");
+      message = format("message" in options ? options.message : defaultMessage);
+      window.prompt(message, text);
+    }
+  } finally {
+    if (selection) {
+      if (typeof selection.removeRange == "function") {
+        selection.removeRange(range);
+      } else {
+        selection.removeAllRanges();
+      }
+    }
+
+    if (mark) {
+      document.body.removeChild(mark);
+    }
+    reselectPrevious();
+  }
+
+  return success;
+}
+
+module.exports = copy;
+
+},{"toggle-selection":"node_modules/toggle-selection/index.js"}],"node_modules/react-copy-to-clipboard/lib/Component.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.CopyToClipboard = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _copyToClipboard = _interopRequireDefault(require("copy-to-clipboard"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var CopyToClipboard =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(CopyToClipboard, _React$PureComponent);
+
+  function CopyToClipboard() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, CopyToClipboard);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(CopyToClipboard)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_this), "onClick", function (event) {
+      var _this$props = _this.props,
+          text = _this$props.text,
+          onCopy = _this$props.onCopy,
+          children = _this$props.children,
+          options = _this$props.options;
+
+      var elem = _react["default"].Children.only(children);
+
+      var result = (0, _copyToClipboard["default"])(text, options);
+
+      if (onCopy) {
+        onCopy(text, result);
+      } // Bypass onClick if it was present
+
+
+      if (elem && elem.props && typeof elem.props.onClick === 'function') {
+        elem.props.onClick(event);
+      }
+    });
+
+    return _this;
+  }
+
+  _createClass(CopyToClipboard, [{
+    key: "render",
+    value: function render() {
+      var _this$props2 = this.props,
+          _text = _this$props2.text,
+          _onCopy = _this$props2.onCopy,
+          _options = _this$props2.options,
+          children = _this$props2.children,
+          props = _objectWithoutProperties(_this$props2, ["text", "onCopy", "options", "children"]);
+
+      var elem = _react["default"].Children.only(children);
+
+      return _react["default"].cloneElement(elem, _objectSpread({}, props, {
+        onClick: this.onClick
+      }));
+    }
+  }]);
+
+  return CopyToClipboard;
+}(_react["default"].PureComponent);
+
+exports.CopyToClipboard = CopyToClipboard;
+
+_defineProperty(CopyToClipboard, "defaultProps", {
+  onCopy: undefined,
+  options: undefined
+});
+},{"react":"node_modules/react/index.js","copy-to-clipboard":"node_modules/copy-to-clipboard/index.js"}],"node_modules/react-copy-to-clipboard/lib/index.js":[function(require,module,exports) {
+"use strict";
+
+var _require = require('./Component'),
+    CopyToClipboard = _require.CopyToClipboard;
+
+CopyToClipboard.CopyToClipboard = CopyToClipboard;
+module.exports = CopyToClipboard;
+},{"./Component":"node_modules/react-copy-to-clipboard/lib/Component.js"}],"bitmoji.png":[function(require,module,exports) {
+module.exports = "/bitmoji.b90c6263.png";
+},{}],"Home.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31741,6 +31999,10 @@ exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
+
+var _reactCopyToClipboard = require("react-copy-to-clipboard");
+
+var _bitmoji = _interopRequireDefault(require("./bitmoji.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31768,21 +32030,57 @@ function (_React$Component) {
   _inherits(Home, _React$Component);
 
   function Home(props) {
+    var _this;
+
     _classCallCheck(this, Home);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Home).call(this, props)); // Must call
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Home).call(this, props)); // Must call
+
+    _this.state = {
+      myEmail: 'closcastillo95@gmail.com',
+      copied: false
+    };
+    return _this;
   }
 
   _createClass(Home, [{
+    key: "copyFunction",
+    value: function copyFunction() {}
+  }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
+      var bitmojiImage = _react.default.createElement("img", {
+        src: _bitmoji.default
+      });
+
       return _react.default.createElement("div", {
         className: "home"
-      }, _react.default.createElement("h1", {
+      }, _react.default.createElement("figure", {
+        className: "bitmoji"
+      }, bitmojiImage), _react.default.createElement("h1", {
         className: "my_name"
-      }, "Carlos Castillo"), _react.default.createElement("p", {
+      }, "I'm Carlos Castillo"), _react.default.createElement("div", {
         className: "about_me"
-      }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus urna et pharetra pharetra massa. Nec nam aliquam sem et tortor consequat. Sed viverra ipsum nunc aliquet bibendum enim. Cras fermentum odio eu feugiat pretium. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Lorem ipsum dolor sit amet consectetur adipiscing. Ac ut consequat semper viverra nam libero justo laoreet. Nisl pretium fusce id velit ut tortor. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Morbi tristique senectus et netus. Laoreet non curabitur gravida arcu ac."));
+      }, _react.default.createElement("h2", null, "About Me"), _react.default.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus urna et pharetra pharetra massa. Nec nam aliquam sem et tortor consequat. Sed viverra ipsum nunc aliquet bibendum enim. Cras fermentum odio eu feugiat pretium. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Lorem ipsum dolor sit amet consectetur adipiscing. Ac ut consequat semper viverra nam libero justo laoreet. Nisl pretium fusce id velit ut tortor. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Morbi tristique senectus et netus. Laoreet non curabitur gravida arcu ac.")), _react.default.createElement("p", {
+        className: "contact_info"
+      }, "Want to get in contact with me?", _react.default.createElement("br", null)), _react.default.createElement(_reactCopyToClipboard.CopyToClipboard, {
+        text: this.state.myEmail,
+        onCopy: function onCopy() {
+          return _this2.setState({
+            copied: true
+          });
+        }
+      }, _react.default.createElement("button", null, "Copy to clipboard with button")), _react.default.createElement("p", null, "closcastillo95@gmail.com"), _react.default.createElement("button", {
+        className: "copybtn",
+        onClick: this.copyFunction.bind(this)
+      }, "Copy"), _react.default.createElement("p", {
+        className: "contact_info"
+      }, _react.default.createElement("a", {
+        href: "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=someone@gmail.com",
+        target: "_blank"
+      }, "Title")));
     }
   }]);
 
@@ -31791,7 +32089,7 @@ function (_React$Component) {
 
 var _default = Home;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js"}],"Projects.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-copy-to-clipboard":"node_modules/react-copy-to-clipboard/lib/index.js","./bitmoji.png":"bitmoji.png"}],"Projects.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32185,7 +32483,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64136" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51887" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

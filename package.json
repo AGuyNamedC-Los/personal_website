@@ -18,6 +18,10 @@
   "homepage": "https://github.com/AGuyNamedC-Los/personal_website#readme",
   "dependencies": {
     "react": "^16.12.0",
+    "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.10"
   }
 }

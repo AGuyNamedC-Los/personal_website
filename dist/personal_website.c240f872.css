@@ -1,5 +1,9 @@
 body {
-	background: #white;
+	margin: 0px;
+}
+
+main {
+	border: solid;
 }
 
 /* container holding all of the buttons for the main menu*/
@@ -91,6 +95,10 @@ body {
 	border-radius: 10%
 }
 
+.bitmoji {
+	text-align: center;
+}
+
 .my_name {
 	text-align: center;
 	font-size: 100px;
@@ -99,8 +107,37 @@ body {
 .about_me {
 	border: solid;
 	font-size: 40px;
+	margin: 100px 300px 100px;
+}
+
+.contact_info {
+	border: solid;
+	font-size: 40px;
 	margin: 100px 400px 100px;
 }
 
+.about_me h2 {
+	font-size: 45px;
+	float: left;
+	border: solid;
+}
+
+.about_me p {
+	border: solid;
+	clear: left
+}
+
+.copybtn {
+	width: 40%;
+	margin-left: 30%;
+	margin-right: 30%
+}
+
+.bottom_page{
+	background: #43498c;
+	width: 100%;
+	text-align: center;
+	padding: 100px 0px 100px;
+}
 
 /*# sourceMappingURL=/personal_website.c240f872.css.map */
