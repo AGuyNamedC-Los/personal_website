@@ -3,7 +3,7 @@ body {
 }
 
 main {
-	border: solid;
+
 }
 
 /* container holding all of the buttons for the main menu*/
@@ -12,6 +12,7 @@ main {
 	width: 100%;
 	text-align: center;
 	padding: 50px 0px 50px;
+	border: solid;
 }
 
 /* the main menu buttons*/
@@ -90,8 +91,7 @@ main {
 }
 
 .home {
-	border: solid;
-	margin: 100px 350px 0px;	/* top, left and right, bottom */
+	margin: 100px 100px 100px;	/* top, left and right, bottom */
 	border-radius: 10%
 }
 
@@ -107,13 +107,7 @@ main {
 .about_me {
 	border: solid;
 	font-size: 40px;
-	margin: 100px 300px 100px;
-}
-
-.contact_info {
-	border: solid;
-	font-size: 40px;
-	margin: 100px 400px 100px;
+	margin: 100px 100px 100px;
 }
 
 .about_me h2 {
@@ -124,13 +118,71 @@ main {
 
 .about_me p {
 	border: solid;
-	clear: left
+	clear: left;
 }
 
-.copybtn {
-	width: 40%;
-	margin-left: 30%;
-	margin-right: 30%
+.contact_me {
+	text-align: center;
+	border: solid;
+	font-size: 40px;
+	margin: 100px 100px 100px;
+}
+
+.contact_me h2 {
+	text-align: center;
+	font-size: 45px;
+	border: solid;
+}
+
+.contact_me .copybtn {
+	display: inline-block;
+	background: white;
+	border: solid;
+	border-color: black;
+	border-radius: 20%;
+	box-shadow: 0 5px 15px -5px #00000070;
+	color: #434db9;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.contact_me .copybtn i {
+	margin: 10px 10px 10px;
+}
+
+/*
+.contact_me .copybtn p {
+	display: inline-block;
+	font-size: 25px;
+}
+*/
+
+.contact_me .copybtn:hover {
+	color: red;
+}
+
+.emailbtns a{
+	display: inline-block;
+	background: white;
+	border: solid;
+	border-color: black;
+	border-radius: 20%;
+	box-shadow: 0 5px 15px -5px #00000070;
+	color: #434db9;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.emailbtns a i {
+	margin: 10px 10px 10px;
+}
+
+.emailbtns a:hover i {
+	color: red;
 }
 
 .bottom_page{
@@ -138,6 +190,7 @@ main {
 	width: 100%;
 	text-align: center;
 	padding: 100px 0px 100px;
+	border: solid;
 }
 
 /*# sourceMappingURL=/personal_website.c240f872.css.map */

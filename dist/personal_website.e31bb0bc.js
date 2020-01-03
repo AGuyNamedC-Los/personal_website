@@ -32044,9 +32044,6 @@ function (_React$Component) {
   }
 
   _createClass(Home, [{
-    key: "copyFunction",
-    value: function copyFunction() {}
-  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -32063,24 +32060,32 @@ function (_React$Component) {
         className: "my_name"
       }, "I'm Carlos Castillo"), _react.default.createElement("div", {
         className: "about_me"
-      }, _react.default.createElement("h2", null, "About Me"), _react.default.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus urna et pharetra pharetra massa. Nec nam aliquam sem et tortor consequat. Sed viverra ipsum nunc aliquet bibendum enim. Cras fermentum odio eu feugiat pretium. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Lorem ipsum dolor sit amet consectetur adipiscing. Ac ut consequat semper viverra nam libero justo laoreet. Nisl pretium fusce id velit ut tortor. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Morbi tristique senectus et netus. Laoreet non curabitur gravida arcu ac.")), _react.default.createElement("p", {
-        className: "contact_info"
-      }, "Want to get in contact with me?", _react.default.createElement("br", null)), _react.default.createElement(_reactCopyToClipboard.CopyToClipboard, {
+      }, _react.default.createElement("h2", null, "About Me"), _react.default.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus urna et pharetra pharetra massa. Nec nam aliquam sem et tortor consequat. Sed viverra ipsum nunc aliquet bibendum enim. Cras fermentum odio eu feugiat pretium. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Lorem ipsum dolor sit amet consectetur adipiscing. Ac ut consequat semper viverra nam libero justo laoreet. Nisl pretium fusce id velit ut tortor. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Morbi tristique senectus et netus. Laoreet non curabitur gravida arcu ac.")), _react.default.createElement("div", {
+        className: "contact_me"
+      }, _react.default.createElement("h2", null, "Want to contact me?"), _react.default.createElement("p", null, "Copy my email to clipboard", _react.default.createElement("span", null, _react.default.createElement(_reactCopyToClipboard.CopyToClipboard, {
         text: this.state.myEmail,
         onCopy: function onCopy() {
           return _this2.setState({
             copied: true
           });
         }
-      }, _react.default.createElement("button", null, "Copy to clipboard with button")), _react.default.createElement("p", null, "closcastillo95@gmail.com"), _react.default.createElement("button", {
-        className: "copybtn",
-        onClick: this.copyFunction.bind(this)
-      }, "Copy"), _react.default.createElement("p", {
-        className: "contact_info"
       }, _react.default.createElement("a", {
-        href: "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=someone@gmail.com",
+        className: "copybtn"
+      }, _react.default.createElement("i", {
+        class: "fas fa-copy"
+      }))))), _react.default.createElement("div", {
+        className: "emailbtns"
+      }, _react.default.createElement("p", null, "Email me through gmail", _react.default.createElement("a", {
+        className: "gmail",
+        href: "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=closcastillo95@gmail.com",
         target: "_blank"
-      }, "Title")));
+      }, _react.default.createElement("i", {
+        class: "fas fa-envelope"
+      }))), _react.default.createElement("p", null, "Email me through your default mail application", _react.default.createElement("a", {
+        href: "mailto:closcastillo95@gmail.com"
+      }, _react.default.createElement("i", {
+        class: "fas fa-envelope"
+      }))))));
     }
   }]);
 
@@ -32088,6 +32093,9 @@ function (_React$Component) {
 }(_react.default.Component);
 
 var _default = Home;
+/*		
+			*/
+
 exports.default = _default;
 },{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-copy-to-clipboard":"node_modules/react-copy-to-clipboard/lib/index.js","./bitmoji.png":"bitmoji.png"}],"Projects.js":[function(require,module,exports) {
 "use strict";
@@ -32483,7 +32491,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51887" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52232" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
