@@ -22,12 +22,14 @@ class Home extends React.Component {
 			
 			<div className="about_me">
 				<h2>About Me</h2>
-				<p>I'm currently a student at California State University East Bay going for a major in computer science. If you'd like to see more of my work or qualifications please visit the appropriate buttons at the top of this page.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-				magna aliqua. Tempus urna et pharetra pharetra massa. Nec nam aliquam sem et tortor consequat. Sed viverra ipsum nunc aliquet bibendum enim. Cras fermentum 
-				odio eu feugiat pretium. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Lorem ipsum dolor sit amet consectetur adipiscing. Ac ut 
-				consequat semper viverra nam libero justo laoreet. Nisl pretium fusce id velit ut tortor. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Morbi
-				tristique senectus et netus. Laoreet non curabitur gravida arcu ac.</p>
+				<p>I'm currently a student at California State University East Bay going for a major in computer science. I'd like to say 
+				I've been programming since I was old enough to use a computer but I've only recently been enfatuated in 
+				this field for about 3 years from when I switched from being a kinesiology major (yeah I dont why I chose that either...). If I'm not 
+				working out or playing video games then I'm probably entranced in my own world, programming away. I'm not very picky in what
+				I like to program or the projects I start, wether it be something entertaining for just myself, a challenge for self satisfaction, or a useful tool for 
+				other people to use I always enjoy the process towards completing a project I've started. It's a goal of 
+				mine to work on projects that are so much bigger than me that can be impactful and helpful to other people. If you'd like 
+				to see more of my work or qualifications please visit the appropriate buttons at the top of this page!</p>
 			</div>
 			
 			{/* contact me section */}
