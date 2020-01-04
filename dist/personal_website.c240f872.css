@@ -53,9 +53,9 @@ main {
   display: none;
   position: absolute;
   background-color: red;
-  /min-width: 160px;
-  /box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  /z-index: 1;
+  /* min-width: 160px; */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
 /* text of the drop down menu*/
@@ -91,8 +91,9 @@ main {
 }
 
 .home {
+	font-family: Times;
+	font-weight: normal;
 	margin: 100px 100px 100px;	/* top, left and right, bottom */
-	border-radius: 10%
 }
 
 .bitmoji {
@@ -105,7 +106,6 @@ main {
 }
 
 .about_me {
-	border: solid;
 	font-size: 40px;
 	margin: 100px 100px 100px;
 }
@@ -113,17 +113,14 @@ main {
 .about_me h2 {
 	font-size: 45px;
 	float: left;
-	border: solid;
 }
 
 .about_me p {
-	border: solid;
 	clear: left;
 }
 
 .contact_me {
 	text-align: center;
-	border: solid;
 	font-size: 40px;
 	margin: 100px 100px 100px;
 }
@@ -131,7 +128,6 @@ main {
 .contact_me h2 {
 	text-align: center;
 	font-size: 45px;
-	border: solid;
 }
 
 .contact_me .copybtn {

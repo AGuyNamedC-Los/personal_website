@@ -22,7 +22,12 @@ class Home extends React.Component {
 			
 			<div className="about_me">
 				<h2>About Me</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus urna et pharetra pharetra massa. Nec nam aliquam sem et tortor consequat. Sed viverra ipsum nunc aliquet bibendum enim. Cras fermentum odio eu feugiat pretium. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Lorem ipsum dolor sit amet consectetur adipiscing. Ac ut consequat semper viverra nam libero justo laoreet. Nisl pretium fusce id velit ut tortor. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Morbi tristique senectus et netus. Laoreet non curabitur gravida arcu ac.</p>
+				<p>I'm currently a student at California State University East Bay going for a major in computer science. If you'd like to see more of my work or qualifications please visit the appropriate buttons at the top of this page.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+				magna aliqua. Tempus urna et pharetra pharetra massa. Nec nam aliquam sem et tortor consequat. Sed viverra ipsum nunc aliquet bibendum enim. Cras fermentum 
+				odio eu feugiat pretium. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Lorem ipsum dolor sit amet consectetur adipiscing. Ac ut 
+				consequat semper viverra nam libero justo laoreet. Nisl pretium fusce id velit ut tortor. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Morbi
+				tristique senectus et netus. Laoreet non curabitur gravida arcu ac.</p>
 			</div>
 			
 			{/* contact me section */}
