@@ -15,14 +15,14 @@ class Menu extends React.Component {
 	}
 	
     render() {
-        let menu =  <ul className="Menu">
-			<li><a onClick={this.webPageHandler.bind(this, "Home")}>Home</a></li>
-			<li><a onClick={this.webPageHandler.bind(this, "Menu")}>Menu</a></li>
-            </ul>;
+		let content = 
+		<div>
+			<p>Im working on it!!!</p>
+		</div>;
 
 		return (
 			<div>
-				{menu}
+			{content}
 			</div>);
     }
 }

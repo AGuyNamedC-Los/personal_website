@@ -32097,7 +32097,7 @@ var _default = Home;
 			*/
 
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-copy-to-clipboard":"node_modules/react-copy-to-clipboard/lib/index.js","./bitmoji.png":"bitmoji.png"}],"Projects.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-copy-to-clipboard":"node_modules/react-copy-to-clipboard/lib/index.js","./bitmoji.png":"bitmoji.png"}],"SpongeBobMock.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32108,6 +32108,83 @@ exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
+
+var _Home = _interopRequireDefault(require("./Home"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var Menu =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Menu, _React$Component);
+
+  function Menu(props) {
+    var _this;
+
+    _classCallCheck(this, Menu);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Menu).call(this, props)); // Must call
+
+    _this.state = {
+      showing: "home"
+    };
+    return _this;
+  }
+  /* web page handlers */
+
+
+  _createClass(Menu, [{
+    key: "webPageHandler",
+    value: function webPageHandler(webPage) {
+      this.setState({
+        showing: webPage
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var content = _react.default.createElement("div", null, _react.default.createElement("p", null, "Im working on it!!!"));
+
+      return _react.default.createElement("div", null, content);
+    }
+  }]);
+
+  return Menu;
+}(_react.default.Component);
+
+var _default = Menu;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./Home":"Home.js"}],"Projects.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactDom = _interopRequireDefault(require("react-dom"));
+
+var _SpongeBobMock = _interopRequireDefault(require("./SpongeBobMock"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32135,17 +32212,60 @@ function (_React$Component) {
   _inherits(Projects, _React$Component);
 
   function Projects(props) {
+    var _this;
+
     _classCallCheck(this, Projects);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Projects).call(this, props)); // Must call
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Projects).call(this, props)); // Must call
+
+    _this.state = {
+      showing: ""
+    };
+    return _this;
   }
 
   _createClass(Projects, [{
+    key: "webPageHandler",
+    value: function webPageHandler(webPage) {
+      this.setState({
+        showing: webPage
+      });
+    }
+  }, {
+    key: "linkHandler",
+    value: function linkHandler(url) {
+      var win = window.open(url, '_blank');
+      win.focus();
+    }
+  }, {
     key: "render",
     value: function render() {
-      var content = _react.default.createElement("p", null, "PAGE FULL OF MY PROJECTS");
+      var content = _react.default.createElement("div", {
+        className: "browser_projects"
+      }, _react.default.createElement("h2", null, "Browser Related Projects"), _react.default.createElement("ul", {
+        className: "browser_projects_menu"
+      }, _react.default.createElement("li", null, _react.default.createElement("a", {
+        onClick: this.linkHandler.bind(this, "https://github.com/AGuyNamedC-Los/personal_website")
+      }, "This Website")), _react.default.createElement("li", null, _react.default.createElement("a", {
+        onClick: this.webPageHandler.bind(this, "SBMockify")
+      }, "Mockify"))));
 
-      return content;
+      switch (this.state.showing) {
+        case "":
+          break;
+
+        case "SBMockify":
+          content = _react.default.createElement(_SpongeBobMock.default, null);
+          break;
+
+        default:
+          content = _react.default.createElement("h2", null, "Warning something went wrong!!!");
+          break;
+      }
+
+      return _react.default.createElement("div", {
+        className: "Projects"
+      }, content);
     }
   }]);
 
@@ -32154,7 +32274,7 @@ function (_React$Component) {
 
 var _default = Projects;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js"}],"MainApp.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./SpongeBobMock":"SpongeBobMock.js"}],"MainApp.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32207,8 +32327,6 @@ function (_React$Component) {
     };
     return _this;
   }
-  /* web page handlers */
-
 
   _createClass(MainApp, [{
     key: "webPageHandler",
@@ -32226,7 +32344,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var menu3 = _react.default.createElement("div", {
+      var menu = _react.default.createElement("div", {
         className: "menu"
       }, _react.default.createElement("div", {
         class: "dropdown"
@@ -32302,77 +32420,7 @@ function (_React$Component) {
         onClick: this.webPageHandler.bind(this, "Home")
       }, "Instagram"))));
 
-      var menu2 = _react.default.createElement("div", {
-        className: "menu"
-      }, _react.default.createElement("div", {
-        class: "dropdown"
-      }, _react.default.createElement("button", {
-        className: "dropbtn",
-        onClick: this.webPageHandler.bind(this, "Home")
-      }, _react.default.createElement("i", {
-        class: "fas fa-home"
-      })), _react.default.createElement("div", {
-        class: "dropdown-content"
-      }, _react.default.createElement("a", {
-        className: "sub_btn",
-        onClick: this.webPageHandler.bind(this, "Home")
-      }, "Home"))), _react.default.createElement("div", {
-        class: "dropdown"
-      }, _react.default.createElement("button", {
-        className: "dropbtn",
-        onClick: this.webPageHandler.bind(this, "Home")
-      }, _react.default.createElement("i", {
-        class: "fab fa-instagram"
-      })), _react.default.createElement("div", {
-        class: "dropdown-content"
-      })), _react.default.createElement("div", {
-        class: "dropdown"
-      }, _react.default.createElement("button", {
-        className: "dropbtn",
-        onClick: this.linkHandler.bind(this, "https://www.linkedin.com/in/carlos-augustine-castillo-1363a6133/")
-      }, _react.default.createElement("i", {
-        class: "fab fa-linkedin"
-      })), _react.default.createElement("div", {
-        class: "dropdown-content"
-      })), _react.default.createElement("div", {
-        class: "dropdown"
-      }, _react.default.createElement("button", {
-        className: "dropbtn",
-        onClick: this.linkHandler.bind(this, "https://github.com/AGuyNamedC-Los")
-      }, _react.default.createElement("i", {
-        class: "fab fa-github-square"
-      })), _react.default.createElement("div", {
-        class: "dropdown-content"
-      })), _react.default.createElement("div", {
-        class: "dropdown"
-      }, _react.default.createElement("button", {
-        className: "dropbtn",
-        onClick: this.webPageHandler.bind(this, "Home")
-      }, _react.default.createElement("i", {
-        class: "fas fa-user-tie"
-      })), _react.default.createElement("div", {
-        class: "dropdown-content"
-      })), _react.default.createElement("div", {
-        class: "dropdown"
-      }, _react.default.createElement("button", {
-        className: "dropbtn",
-        onClick: this.webPageHandler.bind(this, "Projects")
-      }, _react.default.createElement("i", {
-        class: "fas fa-project-diagram"
-      })), _react.default.createElement("div", {
-        class: "dropdown-content"
-      }, _react.default.createElement("a", {
-        className: "sub_btn",
-        onClick: this.webPageHandler.bind(this, "Projects")
-      }, "Project1"))));
-
       var content = _react.default.createElement(_Home.default, null);
-
-      var menu = _react.default.createElement("ul", {
-        className: "Menu"
-      }, _react.default.createElement("li", null, _react.default.createElement("a", {
-        onClick: this.webPageHandler.bind(this, "Home")
-      }, "Home")));
 
       switch (this.state.showing) {
         case "Home":
@@ -32388,7 +32436,7 @@ function (_React$Component) {
           break;
       }
 
-      return _react.default.createElement("div", null, _react.default.createElement("nav", null, menu3), content);
+      return _react.default.createElement("div", null, _react.default.createElement("nav", null, menu), content);
     }
   }]);
 
@@ -32491,7 +32539,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56028" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56324" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

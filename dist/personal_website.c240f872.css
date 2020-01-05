@@ -1,17 +1,17 @@
 body {
 	margin: 0px;
+	padding: 0px;
 }
 
 main {
-
+	
 }
 
 /* container holding all of the buttons for the main menu*/
 .menu {
 	background: #43498c;
-	width: 100%;
 	text-align: center;
-	padding: 50px 0px 50px;
+	padding: 100px 0px 100px;
 	border: solid;
 }
 
@@ -181,9 +181,55 @@ main {
 	color: red;
 }
 
+/* --------------------- Projects page --------------------- */
+.Projects {
+	border: solid;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.Projects h2 {
+	font-size: 35px;
+	text-align: center;
+	border: solid;
+}
+
+.browser_projects a{
+	display: inline-block;
+	margin: 20px 20px 20px;
+	background: white;
+	border: solid;
+	border-color: black;
+	border-radius: 20%;
+	box-shadow: 0 5px 15px -5px #00000070;
+	color: #434db9;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.browser_projects_menu {
+	list-style: none;
+	text-align: center;
+	font-size: 30px;
+}
+
+/*
+.browser_projects_menu a:not(:last-child){
+	margin-bottom: 20px;
+	border: solid;
+	
+}
+
+.browser_projects_menu a:last-child{
+	border: solid;
+}
+
+*/
+
 .bottom_page{
 	background: #43498c;
-	width: 100%;
 	text-align: center;
 	padding: 100px 0px 100px;
 	border: solid;

@@ -9,7 +9,6 @@ class MainApp extends React.Component {
         this.state = {showing: "Home"};
     }
 	
-	/* web page handlers */
 	webPageHandler(webPage) {
 		this.setState({showing: webPage});
 	}
@@ -20,7 +19,7 @@ class MainApp extends React.Component {
 	}
 	
     render() {
-		let menu3 = 
+		let menu = 
 			<div className="menu">
 				<div class="dropdown">
 					<a className="dropbtn" onClick={this.webPageHandler.bind(this, "Home")}><i class="fas fa-home"></i></a>
@@ -28,8 +27,6 @@ class MainApp extends React.Component {
 						<a className="sub_btn" onClick={this.webPageHandler.bind(this, "Home")}>Home</a>
 					</div>
 				</div>
-				
-
 				
 				<div class="dropdown">
 					<a className="dropbtn" onClick={this.linkHandler.bind(this, "https://www.linkedin.com/in/carlos-augustine-castillo-1363a6133/")}><i class="fab fa-linkedin"></i></a>
@@ -66,52 +63,8 @@ class MainApp extends React.Component {
 					</div>
 				</div>
 			</div>;
-		
-		let menu2 = 
-			<div className="menu">
-				<div class="dropdown">
-					<button className="dropbtn" onClick={this.webPageHandler.bind(this, "Home")}><i class="fas fa-home"></i></button>
-					<div class="dropdown-content">
-						<a className="sub_btn" onClick={this.webPageHandler.bind(this, "Home")}>Home</a>
-					</div>
-				</div>
-				
-				<div class="dropdown">
-					<button className="dropbtn" onClick={this.webPageHandler.bind(this, "Home")}><i class="fab fa-instagram"></i></button>
-					<div class="dropdown-content">
-					</div>
-				</div>
-				
-				<div class="dropdown">
-					<button className="dropbtn" onClick={this.linkHandler.bind(this, "https://www.linkedin.com/in/carlos-augustine-castillo-1363a6133/")}><i class="fab fa-linkedin"></i></button>
-					<div class="dropdown-content">
-					</div>
-				</div>
-				
-				<div class="dropdown">
-					<button className="dropbtn" onClick={this.linkHandler.bind(this, "https://github.com/AGuyNamedC-Los")}><i class="fab fa-github-square"></i></button>
-					<div class="dropdown-content">
-					</div>
-				</div>
-				
-				<div class="dropdown">
-					<button className="dropbtn" onClick={this.webPageHandler.bind(this, "Home")}><i class="fas fa-user-tie"></i></button>
-					<div class="dropdown-content">
-					</div>
-				</div>
-				
-				<div class="dropdown">
-					<button className="dropbtn" onClick={this.webPageHandler.bind(this, "Projects")}><i class="fas fa-project-diagram"></i></button>
-					<div class="dropdown-content">
-						<a className="sub_btn" onClick={this.webPageHandler.bind(this, "Projects")}>Project1</a>
-					</div>
-				</div>
-			</div>;
 
         let content = <Home />;
-        let menu =  <ul className="Menu">
-			<li><a onClick={this.webPageHandler.bind(this, "Home")}>Home</a></li>
-            </ul>;
 			
 		switch(this.state.showing){
 			case "Home":
@@ -128,7 +81,7 @@ class MainApp extends React.Component {
 		return (
 			<div>
 				<nav>
-					{menu3}
+					{menu}
 				</nav>
 				{content}
 			</div>);
