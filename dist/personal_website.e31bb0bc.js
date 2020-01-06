@@ -32111,6 +32111,8 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 
 var _Home = _interopRequireDefault(require("./Home"));
 
+var _reactCopyToClipboard = require("react-copy-to-clipboard");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -32144,26 +32146,47 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Menu).call(this, props)); // Must call
 
     _this.state = {
-      showing: "home"
+      text: "",
+      copied: false
     };
     return _this;
   }
-  /* web page handlers */
-
 
   _createClass(Menu, [{
-    key: "webPageHandler",
-    value: function webPageHandler(webPage) {
+    key: "userInput",
+    value: function userInput(event) {
       this.setState({
-        showing: webPage
+        text: event.target.value
       });
     }
   }, {
     key: "render",
     value: function render() {
-      var content = _react.default.createElement("div", null, _react.default.createElement("p", null, "Im working on it!!!"));
+      var _this2 = this;
 
-      return _react.default.createElement("div", null, content);
+      var content = _react.default.createElement("div", null, _react.default.createElement("h1", null, "SB Mockify"), _react.default.createElement("div", {
+        className: "sbmockify_gui"
+      }, _react.default.createElement("textarea", {
+        value: this.state.text,
+        onChange: this.userInput.bind(this)
+      }), _react.default.createElement("div", {
+        className: "sb_btns"
+      }, _react.default.createElement(_reactCopyToClipboard.CopyToClipboard, {
+        text: this.state.text,
+        onCopy: function onCopy() {
+          return _this2.setState({
+            copied: true
+          });
+        }
+      }, _react.default.createElement("a", {
+        className: "copybtn"
+      }, "Copy")), _react.default.createElement("a", null, "ypoc"))), _react.default.createElement("h2", null, "What is this?"), _react.default.createElement("p", {
+        className: "description"
+      }, "Spongebob mockify is a simple text converted to converting your regular text into random upper and lower case letters of the text you input"));
+
+      return _react.default.createElement("div", {
+        className: "sbmockify"
+      }, content);
     }
   }]);
 
@@ -32171,8 +32194,10 @@ function (_React$Component) {
 }(_react.default.Component);
 
 var _default = Menu;
+/* {this.state.copied ? <span style={{color: 'red'}}>copied</span> : <span style={{color: 'red'}}>not copied</span>} */
+
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./Home":"Home.js"}],"Projects.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./Home":"Home.js","react-copy-to-clipboard":"node_modules/react-copy-to-clipboard/lib/index.js"}],"Projects.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32290,6 +32315,8 @@ var _Home = _interopRequireDefault(require("./Home"));
 
 var _Projects = _interopRequireDefault(require("./Projects"));
 
+var _SpongeBobMock = _interopRequireDefault(require("./SpongeBobMock"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -32323,7 +32350,7 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(MainApp).call(this, props)); // Must call
 
     _this.state = {
-      showing: "Home"
+      showing: "SBMockify"
     };
     return _this;
   }
@@ -32423,6 +32450,10 @@ function (_React$Component) {
       var content = _react.default.createElement(_Home.default, null);
 
       switch (this.state.showing) {
+        case "SBMockify":
+          content = _react.default.createElement(_SpongeBobMock.default, null);
+          break;
+
         case "Home":
           content = _react.default.createElement(_Home.default, null);
           break;
@@ -32445,7 +32476,7 @@ function (_React$Component) {
 
 var _default = MainApp;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./Home":"Home.js","./Projects":"Projects.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./Home":"Home.js","./Projects":"Projects.js","./SpongeBobMock":"SpongeBobMock.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -32539,7 +32570,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56324" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55558" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

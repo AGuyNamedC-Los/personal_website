@@ -2,11 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Home from "./Home";
 import Projects from "./Projects";
+import SBMockify from "./SpongeBobMock";
 
 class MainApp extends React.Component {
     constructor(props) {
         super(props); // Must call
-        this.state = {showing: "Home"};
+        this.state = {showing: "SBMockify"};
     }
 	
 	webPageHandler(webPage) {
@@ -67,6 +68,9 @@ class MainApp extends React.Component {
         let content = <Home />;
 			
 		switch(this.state.showing){
+			case "SBMockify":
+				content = <SBMockify />;
+				break;
 			case "Home":
 				content = <Home />;
 				break;
