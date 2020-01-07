@@ -18,6 +18,15 @@ class SpongeBobMock extends React.Component {
 		let mockifyString = "";
 		let tempText = this.state.text;
 		
+		for(var c in this.state.text) {
+			if(Math.floor((Math.random() * 10) + 1) % 3 == 0) {
+				mockifyString += c.toUpperCase();
+			} else {
+				mockifyString += c.toLowerCase();
+			}			
+		}
+		
+		/*
 		for(let i = 0; i < tempText.length; i++) {
 			if(Math.floor((Math.random() * 10) + 1) % 3 == 0) {
 				mockifyString += tempText[i].toUpperCase();
@@ -25,10 +34,9 @@ class SpongeBobMock extends React.Component {
 				mockifyString += tempText[i].toLowerCase();
 				console.log(tempText[i].toUpperCase());
 			}
-		}
+		}*/
 		
 		this.setState({text: mockifyString});
-		
 	}
 	
     render() {
