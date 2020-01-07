@@ -39,14 +39,14 @@ class Home extends React.Component {
 					{/* copy button section */}
 					<CopyToClipboard text={this.state.myEmail}
 						onCopy={() => this.setState({copied: true})}>
-						<a className="copybtn"><i class="fas fa-copy"></i></a>
+						<a className="copybtn"><i className="fas fa-copy"></i></a>
 					</CopyToClipboard></span>
 				</p>
 				
 				{/* email buttons */}
 				<div className="emailbtns">
-					<p>Email me through gmail<a className="gmail" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=closcastillo95@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a></p>
-					<p>Email me through your default mail application<a href="mailto:closcastillo95@gmail.com"><i class="fas fa-envelope"></i></a></p>  
+					<p>Email me through gmail<a className="gmail" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=closcastillo95@gmail.com" target="_blank"><i className="fas fa-envelope"></i></a></p>
+					<p>Email me through your default mail application<a href="mailto:closcastillo95@gmail.com"><i className="fas fa-envelope"></i></a></p>  
 				</div>
 			</div>
 		</div>);
@@ -54,6 +54,3 @@ class Home extends React.Component {
 }
 
 export default Home;
-
-/*		
-			*/

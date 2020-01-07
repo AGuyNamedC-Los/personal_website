@@ -32072,7 +32072,7 @@ function (_React$Component) {
       }, _react.default.createElement("a", {
         className: "copybtn"
       }, _react.default.createElement("i", {
-        class: "fas fa-copy"
+        className: "fas fa-copy"
       }))))), _react.default.createElement("div", {
         className: "emailbtns"
       }, _react.default.createElement("p", null, "Email me through gmail", _react.default.createElement("a", {
@@ -32080,11 +32080,11 @@ function (_React$Component) {
         href: "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=closcastillo95@gmail.com",
         target: "_blank"
       }, _react.default.createElement("i", {
-        class: "fas fa-envelope"
+        className: "fas fa-envelope"
       }))), _react.default.createElement("p", null, "Email me through your default mail application", _react.default.createElement("a", {
         href: "mailto:closcastillo95@gmail.com"
       }, _react.default.createElement("i", {
-        class: "fas fa-envelope"
+        className: "fas fa-envelope"
       }))))));
     }
   }]);
@@ -32093,9 +32093,6 @@ function (_React$Component) {
 }(_react.default.Component);
 
 var _default = Home;
-/*		
-			*/
-
 exports.default = _default;
 },{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-copy-to-clipboard":"node_modules/react-copy-to-clipboard/lib/index.js","./bitmoji.png":"bitmoji.png"}],"SpongeBobMock.js":[function(require,module,exports) {
 "use strict";
@@ -32108,8 +32105,6 @@ exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
-
-var _Home = _interopRequireDefault(require("./Home"));
 
 var _reactCopyToClipboard = require("react-copy-to-clipboard");
 
@@ -32133,17 +32128,17 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var Menu =
+var SpongeBobMock =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(Menu, _React$Component);
+  _inherits(SpongeBobMock, _React$Component);
 
-  function Menu(props) {
+  function SpongeBobMock(props) {
     var _this;
 
-    _classCallCheck(this, Menu);
+    _classCallCheck(this, SpongeBobMock);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Menu).call(this, props)); // Must call
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SpongeBobMock).call(this, props)); // Must call
 
     _this.state = {
       text: "",
@@ -32152,7 +32147,7 @@ function (_React$Component) {
     return _this;
   }
 
-  _createClass(Menu, [{
+  _createClass(SpongeBobMock, [{
     key: "userInput",
     value: function userInput(event) {
       this.setState({
@@ -32190,14 +32185,14 @@ function (_React$Component) {
     }
   }]);
 
-  return Menu;
+  return SpongeBobMock;
 }(_react.default.Component);
 
-var _default = Menu;
+var _default = SpongeBobMock;
 /* {this.state.copied ? <span style={{color: 'red'}}>copied</span> : <span style={{color: 'red'}}>not copied</span>} */
 
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./Home":"Home.js","react-copy-to-clipboard":"node_modules/react-copy-to-clipboard/lib/index.js"}],"Projects.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-copy-to-clipboard":"node_modules/react-copy-to-clipboard/lib/index.js"}],"Projects.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32237,24 +32232,15 @@ function (_React$Component) {
   _inherits(Projects, _React$Component);
 
   function Projects(props) {
-    var _this;
-
     _classCallCheck(this, Projects);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Projects).call(this, props)); // Must call
-
-    _this.state = {
-      showing: ""
-    };
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(Projects).call(this, props)); // Must call
   }
 
   _createClass(Projects, [{
     key: "webPageHandler",
     value: function webPageHandler(webPage) {
-      this.setState({
-        showing: webPage
-      });
+      this.props.WebPageHandler(webPage);
     }
   }, {
     key: "linkHandler",
@@ -32274,19 +32260,6 @@ function (_React$Component) {
       }, "This Website")), _react.default.createElement("li", null, _react.default.createElement("a", {
         onClick: this.webPageHandler.bind(this, "SBMockify")
       }, "Mockify"))));
-
-      switch (this.state.showing) {
-        case "":
-          break;
-
-        case "SBMockify":
-          content = _react.default.createElement(_SpongeBobMock.default, null);
-          break;
-
-        default:
-          content = _react.default.createElement("h2", null, "Warning something went wrong!!!");
-          break;
-      }
 
       return _react.default.createElement("div", {
         className: "Projects"
@@ -32350,7 +32323,7 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(MainApp).call(this, props)); // Must call
 
     _this.state = {
-      showing: "SBMockify"
+      showing: "Home"
     };
     return _this;
   }
@@ -32374,74 +32347,74 @@ function (_React$Component) {
       var menu = _react.default.createElement("div", {
         className: "menu"
       }, _react.default.createElement("div", {
-        class: "dropdown"
+        className: "dropdown"
       }, _react.default.createElement("a", {
         className: "dropbtn",
         onClick: this.webPageHandler.bind(this, "Home")
       }, _react.default.createElement("i", {
-        class: "fas fa-home"
+        className: "fas fa-home"
       })), _react.default.createElement("div", {
-        class: "dropdown-content"
+        className: "dropdown-content"
       }, _react.default.createElement("a", {
         className: "sub_btn",
         onClick: this.webPageHandler.bind(this, "Home")
       }, "Home"))), _react.default.createElement("div", {
-        class: "dropdown"
+        className: "dropdown"
       }, _react.default.createElement("a", {
         className: "dropbtn",
         onClick: this.linkHandler.bind(this, "https://www.linkedin.com/in/carlos-augustine-castillo-1363a6133/")
       }, _react.default.createElement("i", {
-        class: "fab fa-linkedin"
+        className: "fab fa-linkedin"
       })), _react.default.createElement("div", {
-        class: "dropdown-content"
+        className: "dropdown-content"
       }, _react.default.createElement("a", {
         className: "sub_btn",
         onClick: this.linkHandler.bind(this, "https://www.linkedin.com/in/carlos-augustine-castillo-1363a6133/")
       }, "LinkedIn"))), _react.default.createElement("div", {
-        class: "dropdown"
+        className: "dropdown"
       }, _react.default.createElement("a", {
         className: "dropbtn",
         onClick: this.linkHandler.bind(this, "https://github.com/AGuyNamedC-Los")
       }, _react.default.createElement("i", {
-        class: "fab fa-github-square"
+        className: "fab fa-github-square"
       })), _react.default.createElement("div", {
-        class: "dropdown-content"
+        className: "dropdown-content"
       }, _react.default.createElement("a", {
         className: "sub_btn",
-        onClick: this.webPageHandler.bind(this, "Home")
+        onClick: this.linkHandler.bind(this, "https://github.com/AGuyNamedC-Los")
       }, "GitHub"))), _react.default.createElement("div", {
-        class: "dropdown"
+        className: "dropdown"
       }, _react.default.createElement("a", {
         className: "dropbtn",
         onClick: this.linkHandler.bind(this, "https://drive.google.com/open?id=1_66fzouX81fBP-TpWdI0XbQZbv3DzxZE4JT_l8gD78o")
       }, _react.default.createElement("i", {
-        class: "fas fa-user-tie"
+        className: "fas fa-user-tie"
       })), _react.default.createElement("div", {
-        class: "dropdown-content"
+        className: "dropdown-content"
       }, _react.default.createElement("a", {
         className: "sub_btn",
         onClick: this.linkHandler.bind(this, "https://drive.google.com/open?id=1_66fzouX81fBP-TpWdI0XbQZbv3DzxZE4JT_l8gD78o")
       }, "Resume"))), _react.default.createElement("div", {
-        class: "dropdown"
+        className: "dropdown"
       }, _react.default.createElement("a", {
         className: "dropbtn",
         onClick: this.webPageHandler.bind(this, "Projects")
       }, _react.default.createElement("i", {
-        class: "fas fa-project-diagram"
+        className: "fas fa-project-diagram"
       })), _react.default.createElement("div", {
-        class: "dropdown-content"
+        className: "dropdown-content"
       }, _react.default.createElement("a", {
         className: "sub_btn",
         onClick: this.webPageHandler.bind(this, "Projects")
       }, "Projects"))), _react.default.createElement("div", {
-        class: "dropdown"
+        className: "dropdown"
       }, _react.default.createElement("a", {
         className: "dropbtn",
         onClick: this.webPageHandler.bind(this, "Home")
       }, _react.default.createElement("i", {
-        class: "fab fa-instagram"
+        className: "fab fa-instagram"
       })), _react.default.createElement("div", {
-        class: "dropdown-content"
+        className: "dropdown-content"
       }, _react.default.createElement("a", {
         className: "sub_btn",
         onClick: this.webPageHandler.bind(this, "Home")
@@ -32450,16 +32423,21 @@ function (_React$Component) {
       var content = _react.default.createElement(_Home.default, null);
 
       switch (this.state.showing) {
-        case "SBMockify":
-          content = _react.default.createElement(_SpongeBobMock.default, null);
-          break;
-
         case "Home":
           content = _react.default.createElement(_Home.default, null);
           break;
 
         case "Projects":
-          content = _react.default.createElement(_Projects.default, null);
+          content = _react.default.createElement(_Projects.default, {
+            WebPageHandler: this.webPageHandler.bind(this)
+          });
+          {
+            /* have to pass the function down since the projects that can be clicked on are unable to access this level of heirarchy's this.state.showing */
+          }
+          break;
+
+        case "SBMockify":
+          content = _react.default.createElement(_SpongeBobMock.default, null);
           break;
 
         default:
@@ -32534,6 +32512,7 @@ function (_React$Component) {
 
         default:
           return _react.default.createElement("h2", null, "Some type of problem!");
+          break;
       }
     }
   }]);
@@ -32570,7 +32549,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55558" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64656" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

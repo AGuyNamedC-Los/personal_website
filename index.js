@@ -7,7 +7,6 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
-
 import MainApp from "./MainApp.js";
 
 class App extends React.Component {
@@ -24,6 +23,7 @@ class App extends React.Component {
                 break;
             default:
                 return <h2>Some type of problem!</h2>;
+				break;
         }
 	}
 }

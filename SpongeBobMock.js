@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Home from "./Home";
+//import Home from "./Home";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 
-class Menu extends React.Component {
+class SpongeBobMock extends React.Component {
     constructor(props) {
         super(props); // Must call
         this.state = {text: "", copied: false};
@@ -41,6 +41,6 @@ class Menu extends React.Component {
 			</div>);
     }
 }
-export default Menu;
+export default SpongeBobMock;
 
 /* {this.state.copied ? <span style={{color: 'red'}}>copied</span> : <span style={{color: 'red'}}>not copied</span>} */
