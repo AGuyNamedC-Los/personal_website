@@ -32155,6 +32155,25 @@ function (_React$Component) {
       });
     }
   }, {
+    key: "mockify",
+    value: function mockify() {
+      var mockifyString = "";
+      var tempText = this.state.text;
+
+      for (var i = 0; i < tempText.length; i++) {
+        if (Math.floor(Math.random() * 10 + 1) % 3 == 0) {
+          mockifyString += tempText[i].toUpperCase();
+        } else {
+          mockifyString += tempText[i].toLowerCase();
+          console.log(tempText[i].toUpperCase());
+        }
+      }
+
+      this.setState({
+        text: mockifyString
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -32175,7 +32194,9 @@ function (_React$Component) {
         }
       }, _react.default.createElement("a", {
         className: "copybtn"
-      }, "Copy")), _react.default.createElement("a", null, "ypoc"))), _react.default.createElement("h2", null, "What is this?"), _react.default.createElement("p", {
+      }, "Copy")), _react.default.createElement("a", {
+        onClick: this.mockify.bind(this)
+      }, "ypoc"))), _react.default.createElement("h2", null, "What is this?"), _react.default.createElement("p", {
         className: "description"
       }, "Spongebob mockify is a simple text converted to converting your regular text into random upper and lower case letters of the text you input"));
 
@@ -32323,7 +32344,7 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(MainApp).call(this, props)); // Must call
 
     _this.state = {
-      showing: "Home"
+      showing: "SBMockify"
     };
     return _this;
   }
@@ -32549,7 +32570,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64656" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56690" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

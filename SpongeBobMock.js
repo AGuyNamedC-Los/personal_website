@@ -14,19 +14,35 @@ class SpongeBobMock extends React.Component {
 		this.setState({text: event.target.value});
 	}
 	
+	mockify() {
+		let mockifyString = "";
+		let tempText = this.state.text;
+		
+		for(let i = 0; i < tempText.length; i++) {
+			if(Math.floor((Math.random() * 10) + 1) % 3 == 0) {
+				mockifyString += tempText[i].toUpperCase();
+			} else {
+				mockifyString += tempText[i].toLowerCase();
+				console.log(tempText[i].toUpperCase());
+			}
+		}
+		
+		this.setState({text: mockifyString});
+		
+	}
+	
     render() {
 		let content = 
 		<div>
 			<h1>SB Mockify</h1>
 			<div className="sbmockify_gui">
-				
 				<textarea value={this.state.text} onChange={this.userInput.bind(this)}></textarea>
 				<div className="sb_btns">
 					<CopyToClipboard text={this.state.text}
 						onCopy={() => this.setState({copied: true})}>
 						<a className="copybtn">Copy</a>
 					</CopyToClipboard>
-					<a>ypoc</a>
+					<a onClick={this.mockify.bind(this)}>ypoc</a>
 				</div>
 			</div>
 			<h2>What is this?</h2>

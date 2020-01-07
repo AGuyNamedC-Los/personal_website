@@ -247,7 +247,7 @@ main {
 .sb_btns a {
 	display: inline-block;
 	margin: 20px 20px 0px;	/* top, left and right, bottom */
-		background: white;
+	background: white;
 	border: solid;
 	border-color: black;
 	border-radius: 20%;

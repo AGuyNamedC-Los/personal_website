@@ -7,7 +7,7 @@ import SBMockify from "./SpongeBobMock";
 class MainApp extends React.Component {
     constructor(props) {
         super(props); // Must call
-        this.state = {showing: "Home"};
+        this.state = {showing: "SBMockify"};
     }
 	
 	webPageHandler(webPage) {
