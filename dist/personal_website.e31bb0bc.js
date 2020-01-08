@@ -32196,13 +32196,18 @@ function (_React$Component) {
         }
       }, this.state.copied ? _react.default.createElement("a", {
         className: "copybtn"
-      }, "Copied") : _react.default.createElement("a", {
+      }, _react.default.createElement("p", null, "Copied")) : _react.default.createElement("a", {
         className: "copybtn"
-      }, "Copy")), _react.default.createElement("a", {
+      }, _react.default.createElement("p", null, "Copy"))), _react.default.createElement("a", {
         onClick: this.mockify.bind(this)
-      }, "Mockify"))), _react.default.createElement("h2", null, "What is this?"), _react.default.createElement("p", {
+      }, _react.default.createElement("p", null, "Mockify")))), _react.default.createElement("div", {
+        className: "sbm_description"
+      }, _react.default.createElement("h2", null, "What is this?"), _react.default.createElement("p", {
         className: "description"
-      }, "Spongebob mockify is a simple text converted to converting your regular text into random upper and lower case letters of the text you input"));
+      }, "Inspired by the Spongebob Meme that mimicks what a person types by retyping what that person says in an obnoxious upper and lower case format. SB Mockify allows you to easily type in what you want to be SB Mockified and copied to your clipboard without the need to tediously alternate between upper and lower case letters as you type."), _react.default.createElement("img", {
+        src: "https://i.imgflip.com/3lhvk1.jpg",
+        title: "made at imgflip.com"
+      })));
 
       return _react.default.createElement("div", {
         className: "sbmockify"
@@ -32214,7 +32219,7 @@ function (_React$Component) {
 }(_react.default.Component);
 
 var _default = SpongeBobMock;
-/* {this.state.copied ? <span style={{color: 'red'}}>copied</span> : <span style={{color: 'red'}}>not copied</span>} */
+/* <a href="https://imgflip.com/i/3lhvk1"><img src="https://i.imgflip.com/3lhvk1.jpg" title="made at imgflip.com"/></a> */
 
 exports.default = _default;
 },{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-copy-to-clipboard":"node_modules/react-copy-to-clipboard/lib/index.js"}],"Projects.js":[function(require,module,exports) {
@@ -32574,7 +32579,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62624" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62869" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

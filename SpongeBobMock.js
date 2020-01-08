@@ -39,15 +39,19 @@ class SpongeBobMock extends React.Component {
 				<div className="sb_btns">
 					<CopyToClipboard text={this.state.text}
 						onCopy={() => this.setState({copied: true})}>
-						{this.state.copied ? <a className="copybtn">Copied</a> : <a className="copybtn">Copy</a>}
+						{this.state.copied ? <a className="copybtn"><p>Copied</p></a> : <a className="copybtn"><p>Copy</p></a>}
 					</CopyToClipboard>
-					<a onClick={this.mockify.bind(this)}>Mockify</a>
+					<a onClick={this.mockify.bind(this)}><p>Mockify</p></a>
 				</div>
 			</div>
-			<h2>What is this?</h2>
-			<p className="description">Spongebob mockify is a simple text converted to converting your regular text into random upper and lower case letters of the text you input</p>
 			
-			
+			<div className="sbm_description">
+				<h2>What is this?</h2>
+				<p className="description">Inspired by the Spongebob Meme that mimicks what a person types by retyping what that person says in an obnoxious 
+				upper and lower case format. SB Mockify allows you to easily type in what you want to be SB Mockified and copied to your clipboard without
+				the need to tediously alternate between upper and lower case letters as you type.</p>
+				<img src="https://i.imgflip.com/3lhvk1.jpg" title="made at imgflip.com"/>
+			</div>
 		</div>;
 
 		return (
@@ -58,4 +62,4 @@ class SpongeBobMock extends React.Component {
 }
 export default SpongeBobMock;
 
-/* {this.state.copied ? <span style={{color: 'red'}}>copied</span> : <span style={{color: 'red'}}>not copied</span>} */
+/* <a href="https://imgflip.com/i/3lhvk1"><img src="https://i.imgflip.com/3lhvk1.jpg" title="made at imgflip.com"/></a> */
