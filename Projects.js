@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import SBMockify from "./SpongeBobMock";
+import SBMockify from "./SBMockify";
 
 class Projects extends React.Component {
     constructor(props) {

@@ -169,12 +169,12 @@ main p {
 	color: red;
 }
 
-.emailbtns a{
+.emailbtns p {
 	display: inline-block;
 	background: white;
 	border: solid;
 	border-color: black;
-	border-radius: 20%;
+	border-radius: 10px;
 	box-shadow: 0 5px 15px -5px #00000070;
 	color: #434db9;
 	overflow: hidden;
@@ -223,7 +223,6 @@ main p {
 .browser_projects_menu a:not(:last-child){
 	margin-bottom: 20px;
 	border: solid;
-	
 }
 
 .browser_projects_menu a:last-child{

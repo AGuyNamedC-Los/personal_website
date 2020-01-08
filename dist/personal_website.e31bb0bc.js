@@ -32094,7 +32094,7 @@ function (_React$Component) {
 
 var _default = Home;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-copy-to-clipboard":"node_modules/react-copy-to-clipboard/lib/index.js","./bitmoji.png":"bitmoji.png"}],"SpongeBobMock.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-copy-to-clipboard":"node_modules/react-copy-to-clipboard/lib/index.js","./bitmoji.png":"bitmoji.png"}],"SBMockify.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32128,17 +32128,17 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var SpongeBobMock =
+var SBMockify =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(SpongeBobMock, _React$Component);
+  _inherits(SBMockify, _React$Component);
 
-  function SpongeBobMock(props) {
+  function SBMockify(props) {
     var _this;
 
-    _classCallCheck(this, SpongeBobMock);
+    _classCallCheck(this, SBMockify);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(SpongeBobMock).call(this, props)); // Must call
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SBMockify).call(this, props)); // Must call
 
     _this.state = {
       text: "",
@@ -32147,12 +32147,18 @@ function (_React$Component) {
     return _this;
   }
 
-  _createClass(SpongeBobMock, [{
+  _createClass(SBMockify, [{
     key: "userInput",
     value: function userInput(event) {
       this.setState({
         text: event.target.value
       });
+    }
+  }, {
+    key: "linkHandler",
+    value: function linkHandler(url) {
+      var win = window.open(url, '_blank');
+      win.focus();
     }
   }, {
     key: "mockify",
@@ -32207,7 +32213,9 @@ function (_React$Component) {
       }, "Inspired by the Spongebob Meme that mimicks what a person types by retyping what that person says in an obnoxious upper and lower case format. SB Mockify allows you to easily type in what you want to be SB Mockified and copied to your clipboard without the need to tediously alternate between upper and lower case letters as you type."), _react.default.createElement("img", {
         src: "https://i.imgflip.com/3lhvk1.jpg",
         title: "made at imgflip.com"
-      })));
+      })), _react.default.createElement("h2", null, "Want to see how this was made? Click the Link Below!"), _react.default.createElement("a", {
+        onClick: this.linkHandler.bind(this, "https://github.com/AGuyNamedC-Los")
+      }, _react.default.createElement("p", null, "SB Mockify code")));
 
       return _react.default.createElement("div", {
         className: "sbmockify"
@@ -32215,10 +32223,10 @@ function (_React$Component) {
     }
   }]);
 
-  return SpongeBobMock;
+  return SBMockify;
 }(_react.default.Component);
 
-var _default = SpongeBobMock;
+var _default = SBMockify;
 /* <a href="https://imgflip.com/i/3lhvk1"><img src="https://i.imgflip.com/3lhvk1.jpg" title="made at imgflip.com"/></a> */
 
 exports.default = _default;
@@ -32234,7 +32242,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
 
-var _SpongeBobMock = _interopRequireDefault(require("./SpongeBobMock"));
+var _SBMockify = _interopRequireDefault(require("./SBMockify"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32302,7 +32310,7 @@ function (_React$Component) {
 
 var _default = Projects;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./SpongeBobMock":"SpongeBobMock.js"}],"MainApp.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./SBMockify":"SBMockify.js"}],"MainApp.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32318,7 +32326,7 @@ var _Home = _interopRequireDefault(require("./Home"));
 
 var _Projects = _interopRequireDefault(require("./Projects"));
 
-var _SpongeBobMock = _interopRequireDefault(require("./SpongeBobMock"));
+var _SBMockify = _interopRequireDefault(require("./SBMockify"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32467,7 +32475,7 @@ function (_React$Component) {
           break;
 
         case "SBMockify":
-          content = _react.default.createElement(_SpongeBobMock.default, null);
+          content = _react.default.createElement(_SBMockify.default, null);
           break;
 
         default:
@@ -32484,7 +32492,7 @@ function (_React$Component) {
 
 var _default = MainApp;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./Home":"Home.js","./Projects":"Projects.js","./SpongeBobMock":"SpongeBobMock.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./Home":"Home.js","./Projects":"Projects.js","./SBMockify":"SBMockify.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -32579,7 +32587,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62869" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64908" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
