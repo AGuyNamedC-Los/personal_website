@@ -3,8 +3,14 @@ body {
 	padding: 0px;
 }
 
-main {
-	
+main h1 {
+	text-align: center;
+	font-size: 50px;
+}
+
+main h2 {
+	text-align: center;
+	font-size: 35px;	
 }
 
 /* container holding all of the buttons for the main menu*/
@@ -125,11 +131,6 @@ main {
 	margin: 100px 100px 100px;
 }
 
-.contact_me h2 {
-	text-align: center;
-	font-size: 35px;
-}
-
 .contact_me .copybtn {
 	display: inline-block;
 	background: white;
@@ -188,13 +189,7 @@ main {
 	padding-bottom: 20px;
 }
 
-.Projects h2 {
-	font-size: 35px;
-	text-align: center;
-	border: solid;
-}
-
-.browser_projects a{
+.browser_projects a {
 	display: inline-block;
 	margin: 20px 20px 20px;
 	background: white;
@@ -229,12 +224,6 @@ main {
 */
 
 /* --------------------- SB Mockify page --------------------- */
-.sbmockify h2 {
-	text-align: center;
-	font-size: 35px;
-	border: solid;
-}
-
 .sbmockify .sbmockify_gui {
 	text-align: center;
 }
@@ -247,6 +236,7 @@ main {
 .sb_btns a {
 	display: inline-block;
 	margin: 20px 20px 0px;	/* top, left and right, bottom */
+	width: 80px;
 	background: white;
 	border: solid;
 	border-color: black;

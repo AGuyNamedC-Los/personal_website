@@ -32170,7 +32170,8 @@ function (_React$Component) {
       }
 
       this.setState({
-        text: mockifyString
+        text: mockifyString,
+        copied: false
       });
     }
   }, {
@@ -32181,6 +32182,7 @@ function (_React$Component) {
       var content = _react.default.createElement("div", null, _react.default.createElement("h1", null, "SB Mockify"), _react.default.createElement("div", {
         className: "sbmockify_gui"
       }, _react.default.createElement("textarea", {
+        spellCheck: "false",
         value: this.state.text,
         onChange: this.userInput.bind(this)
       }), _react.default.createElement("div", {
@@ -32192,11 +32194,13 @@ function (_React$Component) {
             copied: true
           });
         }
-      }, _react.default.createElement("a", {
+      }, this.state.copied ? _react.default.createElement("a", {
+        className: "copybtn"
+      }, "Copied") : _react.default.createElement("a", {
         className: "copybtn"
       }, "Copy")), _react.default.createElement("a", {
         onClick: this.mockify.bind(this)
-      }, "ypoc"))), _react.default.createElement("h2", null, "What is this?"), _react.default.createElement("p", {
+      }, "Mockify"))), _react.default.createElement("h2", null, "What is this?"), _react.default.createElement("p", {
         className: "description"
       }, "Spongebob mockify is a simple text converted to converting your regular text into random upper and lower case letters of the text you input"));
 
@@ -32570,7 +32574,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56690" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62624" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
