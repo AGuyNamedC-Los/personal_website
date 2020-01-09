@@ -32358,15 +32358,17 @@ function (_React$Component) {
         className: "browser_projects_menu"
       }, _react.default.createElement("li", null, _react.default.createElement("a", {
         onClick: this.linkHandler.bind(this, "https://github.com/AGuyNamedC-Los/personal_website")
-      }, "This Website")), _react.default.createElement("li", null, _react.default.createElement("a", {
+      }, _react.default.createElement("p", null, "This Website"))), _react.default.createElement("li", null, _react.default.createElement("a", {
         onClick: this.webPageHandler.bind(this, "SBMockify")
-      }, "Mockify")))), _react.default.createElement("div", {
+      }, _react.default.createElement("p", null, "Mockify"))), _react.default.createElement("li", null, _react.default.createElement("a", {
+        onClick: this.webPageHandler.bind(this, "UnderConstruction")
+      }, _react.default.createElement("p", null, "Giftee"))))), _react.default.createElement("div", {
         className: "data_structure_projects"
       }, _react.default.createElement("h2", null, "Data Structure Projects"), _react.default.createElement("ul", {
         className: "data_structure_menu"
       }, _react.default.createElement("li", null, _react.default.createElement("a", {
         onClick: this.webPageHandler.bind(this, "UnderConstruction")
-      }, "Doubly Linked List")))));
+      }, _react.default.createElement("p", null, "Doubly Linked List"))))));
 
       return _react.default.createElement("div", {
         className: "Projects"
@@ -32495,14 +32497,14 @@ function (_React$Component) {
         className: "dropdown"
       }, _react.default.createElement("a", {
         className: "dropbtn",
-        onClick: this.linkHandler.bind(this, "https://drive.google.com/open?id=1_66fzouX81fBP-TpWdI0XbQZbv3DzxZE4JT_l8gD78o")
+        onClick: this.linkHandler.bind(this, "https://docs.google.com/document/d/17TLjvQfhGAJ_DN9jOAKdODw-SwgxQmaO2SEo6q9rRRY/edit")
       }, _react.default.createElement("i", {
         className: "fas fa-user-tie"
       })), _react.default.createElement("div", {
         className: "dropdown-content"
       }, _react.default.createElement("a", {
         className: "sub_btn",
-        onClick: this.linkHandler.bind(this, "https://drive.google.com/open?id=1_66fzouX81fBP-TpWdI0XbQZbv3DzxZE4JT_l8gD78o")
+        onClick: this.linkHandler.bind(this, "https://docs.google.com/document/d/17TLjvQfhGAJ_DN9jOAKdODw-SwgxQmaO2SEo6q9rRRY/edit")
       }, "Resume"))), _react.default.createElement("div", {
         className: "dropdown"
       }, _react.default.createElement("a", {
@@ -32664,7 +32666,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57170" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57699" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
