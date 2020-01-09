@@ -32062,7 +32062,9 @@ function (_React$Component) {
         className: "about_me"
       }, _react.default.createElement("h2", null, "About Me"), _react.default.createElement("p", null, "I'm currently a student at California State University East Bay going for a major in computer science. I'd like to say I've been programming since I was old enough to use a computer but I've only recently been enfatuated in this field for about 3 years from when I switched from being a kinesiology major (yeah I dont why I chose that either...). If I'm not working out or playing video games then I'm probably entranced in my own world, programming away. I'm not very picky in what I like to program or the projects I start, wether it be something entertaining for just myself, a challenge for self satisfaction, or a useful tool for other people to use I always enjoy the process towards completing a project I've started. It's a goal of mine to work on projects that are so much bigger than me that can be impactful and helpful to other people. If you'd like to see more of my work or qualifications please visit the appropriate buttons at the top of this page!")), _react.default.createElement("div", {
         className: "contact_me"
-      }, _react.default.createElement("h2", null, "Want to contact me?"), _react.default.createElement("p", null, "Copy my email to clipboard", _react.default.createElement("span", null, _react.default.createElement(_reactCopyToClipboard.CopyToClipboard, {
+      }, _react.default.createElement("h2", null, "Want to contact me?"), _react.default.createElement("div", {
+        className: "contact_me_btns"
+      }, _react.default.createElement("p", null, "Copy my email to clipboard", _react.default.createElement(_reactCopyToClipboard.CopyToClipboard, {
         text: this.state.myEmail,
         onCopy: function onCopy() {
           return _this2.setState({
@@ -32073,9 +32075,7 @@ function (_React$Component) {
         className: "copybtn"
       }, _react.default.createElement("i", {
         className: "fas fa-copy"
-      }))))), _react.default.createElement("div", {
-        className: "emailbtns"
-      }, _react.default.createElement("p", null, "Email me through gmail", _react.default.createElement("a", {
+      })))), _react.default.createElement("p", null, "Email me through gmail", _react.default.createElement("a", {
         className: "gmail",
         href: "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=closcastillo95@gmail.com",
         target: "_blank"
@@ -32093,6 +32093,25 @@ function (_React$Component) {
 }(_react.default.Component);
 
 var _default = Home;
+/* 			
+			<div className="contact_me">
+				<h2>Want to contact me?</h2>
+				<p>Copy my email to clipboard<span>	
+					{
+					<CopyToClipboard text={this.state.myEmail}
+						onCopy={() => this.setState({copied: true})}>
+						<a className="copybtn"><i className="fas fa-copy"></i></a>
+					</CopyToClipboard></span>
+				</p>
+				
+				
+				<div className="emailbtns">
+					<p>Email me through gmail<a className="gmail" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=closcastillo95@gmail.com" target="_blank"><i className="fas fa-envelope"></i></a></p>
+					<p>Email me through your default mail application<a href="mailto:closcastillo95@gmail.com"><i className="fas fa-envelope"></i></a></p>  
+				</div>
+			</div>
+*/
+
 exports.default = _default;
 },{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-copy-to-clipboard":"node_modules/react-copy-to-clipboard/lib/index.js","./bitmoji.png":"bitmoji.png"}],"SBMockify.js":[function(require,module,exports) {
 "use strict";
@@ -32213,9 +32232,11 @@ function (_React$Component) {
       }, "Inspired by the Spongebob Meme that mimicks what a person types by retyping what that person says in an obnoxious upper and lower case format. SB Mockify allows you to easily type in what you want to be SB Mockified and copied to your clipboard without the need to tediously alternate between upper and lower case letters as you type."), _react.default.createElement("img", {
         src: "https://i.imgflip.com/3lhvk1.jpg",
         title: "made at imgflip.com"
-      })), _react.default.createElement("h2", null, "Want to see how this was made? Click the Link Below!"), _react.default.createElement("a", {
-        onClick: this.linkHandler.bind(this, "https://github.com/AGuyNamedC-Los")
-      }, _react.default.createElement("p", null, "SB Mockify code")));
+      })), _react.default.createElement("div", {
+        className: "sbm_code"
+      }, _react.default.createElement("h2", null, "Want to see how this was made? Click the Link Below!"), _react.default.createElement("a", {
+        onClick: this.linkHandler.bind(this, "https://github.com/AGuyNamedC-Los/personal_website/blob/master/SBMockify.js")
+      }, _react.default.createElement("p", null, "SB Mockify code"))));
 
       return _react.default.createElement("div", {
         className: "sbmockify"
@@ -32587,7 +32608,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64908" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65440" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

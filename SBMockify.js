@@ -57,8 +57,10 @@ class SBMockify extends React.Component {
 				<img src="https://i.imgflip.com/3lhvk1.jpg" title="made at imgflip.com"/>
 			</div>
 			
-			<h2>Want to see how this was made? Click the Link Below!</h2>
-			<a onClick={this.linkHandler.bind(this, "https://github.com/AGuyNamedC-Los")}><p>SB Mockify code</p></a>
+			<div className="sbm_code">
+				<h2>Want to see how this was made? Click the Link Below!</h2>
+				<a onClick={this.linkHandler.bind(this, "https://github.com/AGuyNamedC-Los/personal_website/blob/master/SBMockify.js")}><p>SB Mockify code</p></a>
+			</div>
 		</div>;
 
 		return (

@@ -15,19 +15,20 @@ main h1 {
 
 main h2 {
 	text-align: center;
-	font-size: 35px;	
+	font-size: 35px;
 }
 
 main p {
 	font-size: 30px;
 }
 
-/* container holding all of the buttons for the main menu*/
+/* --------------------- Menu Bar --------------------- */
 .menu {
 	background: #43498c;
 	text-align: center;
 	padding: 100px 0px 100px;
 	border: solid;
+	margin-bottom: 10px;
 }
 
 /* the main menu buttons*/
@@ -105,10 +106,11 @@ main p {
 	background-color: #white;
 }
 
+/* --------------------- Home Page --------------------- */
 .home {
-	font-family: Times;
-	font-weight: normal;
-	margin: 100px 100px 100px;	/* top, left and right, bottom */
+	/*font-family: Times;
+	font-weight: normal;*/
+	margin: 0px 100px 100px;	/* top, left and right, bottom */
 }
 
 .bitmoji {
@@ -140,6 +142,7 @@ main p {
 	margin: 100px 100px 100px;
 }
 
+/*
 .contact_me .copybtn {
 	display: inline-block;
 	background: white;
@@ -169,6 +172,51 @@ main p {
 	color: red;
 }
 
+.contact_me_btns {
+	display: block;
+}
+
+.contact_me_btns p {
+	background: white;
+	border: solid;
+	border-color: black;
+	border-radius: 10px;
+	box-shadow: 0 5px 15px -5px #00000070;
+	color: #434db9;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	margin: 10px 20% 0px;
+}
+
+.contact_me_btns p:nth-child(1) {
+	margin-left: 870px;
+	margin-right: 870px;
+}
+
+.contact_me_btns p:nth-child(2) {
+	margin-left: 890px;
+	margin-right: 890px;
+}
+
+.contact_me_btns p:nth-child(3) {
+	margin-left: 750px;
+	margin-right: 750px;
+}
+
+.contact_me_btns p i {
+	margin-left: 20px;
+	color: #434db9;
+}
+
+.contact_me_btns p:hover{
+	color: red;
+}
+ 
+.contact_me_btns p a:hover i {
+	color: red;
+}
+
 .emailbtns p {
 	display: inline-block;
 	background: white;
@@ -180,11 +228,13 @@ main p {
 	overflow: hidden;
 	position: relative;
 	cursor: pointer;
-	margin-left: 10px;
+	margin: 10px 20% 0px;	/* changing the middle value from % to px puts them on different lines? */
+
 }
 
 .emailbtns a i {
-	margin: 10px 10px 10px;
+	margin: 10px 20px 10px;
+	color: #434db9;
 }
 
 .emailbtns a:hover i {
@@ -270,15 +320,43 @@ main p {
 }
 
 .sbm_description img {
-	  display: block;
-  margin-left: auto;
-  margin-right: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
+.sbm_code {
+	text-align: center;
+}
+
+.sbm_code a {
+	display: inline-block;
+	margin: 0px 20px 40px;	/* top, left and right, bottom */
+	width: 300px;
+	background: white;
+	border: solid;
+	border-color: black;
+	border-radius: 20%;
+	box-shadow: 0 5px 15px -5px #00000070;
+	color: #434db9;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.sbm_code a:hover p {
+	color: red;
+}
+
+.sbmockify a p {
+	text-align: center;
+}
 
 .bottom_page{
 	background: #43498c;
 	text-align: center;
 	padding: 100px 0px 100px;
 	border: solid;
+	margin-top: 10px;
 }
