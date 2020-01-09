@@ -142,32 +142,6 @@ main p {
 	margin: 100px 100px 100px;
 }
 
-/*
-.contact_me .copybtn {
-	display: inline-block;
-	background: white;
-	border: solid;
-	border-color: black;
-	border-radius: 20%;
-	box-shadow: 0 5px 15px -5px #00000070;
-	color: #434db9;
-	overflow: hidden;
-	position: relative;
-	cursor: pointer;
-	margin-left: 10px;
-}
-
-.contact_me .copybtn i {
-	margin: 10px 10px 10px;
-}
-
-/*
-.contact_me .copybtn p {
-	display: inline-block;
-	font-size: 25px;
-}
-*/
-
 .contact_me .copybtn:hover {
 	color: red;
 }
@@ -217,38 +191,13 @@ main p {
 	color: red;
 }
 
-.emailbtns p {
-	display: inline-block;
-	background: white;
-	border: solid;
-	border-color: black;
-	border-radius: 10px;
-	box-shadow: 0 5px 15px -5px #00000070;
-	color: #434db9;
-	overflow: hidden;
-	position: relative;
-	cursor: pointer;
-	margin: 10px 20% 0px;	/* changing the middle value from % to px puts them on different lines? */
-
-}
-
-.emailbtns a i {
-	margin: 10px 20px 10px;
-	color: #434db9;
-}
-
-.emailbtns a:hover i {
-	color: red;
-}
-
 /* --------------------- Projects page --------------------- */
 .Projects {
-	border: solid;
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
 
-.browser_projects a {
+.Projects a {
 	display: inline-block;
 	margin: 20px 20px 20px;
 	background: white;
@@ -263,7 +212,7 @@ main p {
 	margin-left: 10px;
 }
 
-.browser_projects_menu {
+.browser_projects_menu, .data_structure_menu {
 	list-style: none;
 	text-align: center;
 	font-size: 30px;
@@ -354,11 +303,15 @@ main p {
 }
 
 .bottom_page{
-	background: #43498c;
+	border:solid;
+	position: relative;
+	left: 0;
+	bottom: 0;
+	padding-top: 200px;
+	height: 100px;
+	width: 100%;
+	background-color:  #434db9;
 	text-align: center;
-	padding: 100px 0px 100px;
-	border: solid;
-	margin-top: 10px;
 }
 
 /*# sourceMappingURL=/personal_website.c240f872.css.map */

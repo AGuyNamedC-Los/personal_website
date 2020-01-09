@@ -3,11 +3,12 @@ import ReactDOM from "react-dom";
 import Home from "./Home";
 import Projects from "./Projects";
 import SBMockify from "./SBMockify";
+import UnderConstruction from "./underConstruction";
 
 class MainApp extends React.Component {
     constructor(props) {
         super(props); // Must call
-        this.state = {showing: "SBMockify"};
+        this.state = {showing: "Home"};
     }
 	
 	webPageHandler(webPage) {
@@ -78,6 +79,9 @@ class MainApp extends React.Component {
 			case "SBMockify":
 				content = <SBMockify />;
 				break;
+			case "UnderConstruction":
+				content = <UnderConstruction />;
+				break;
 			default:
 				content = <h2>Warning something went wrong!!!</h2>;
 				break;
@@ -89,6 +93,8 @@ class MainApp extends React.Component {
 					{menu}
 				</nav>
 				{content}
+				<div class="bottom_page">
+				</div>
 			</div>);
     }
 }
