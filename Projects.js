@@ -32,7 +32,7 @@ class Projects extends React.Component {
 			<div className="data_structure_projects">
 				<h2>Data Structure Projects</h2>
 				<ul className="data_structure_menu">
-					<li><a onClick={this.webPageHandler.bind(this, "UnderConstruction")}><p>Doubly Linked List</p></a></li>
+					<li><a onClick={this.linkHandler.bind(this, "https://github.com/AGuyNamedC-Los/data_structures/tree/master/DoublyLinkedList")}><p>Doubly Linked List</p></a></li>
 				</ul>
 			</div>
 		</div>

@@ -32081,9 +32081,21 @@ function (_React$Component) {
         target: "_blank"
       }, _react.default.createElement("i", {
         className: "fas fa-envelope"
-      }))), _react.default.createElement("p", null, "Email me through your default mail application", _react.default.createElement("a", {
+      }))), _react.default.createElement("a", {
+        className: "gmail",
+        href: "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=closcastillo95@gmail.com",
+        target: "_blank"
+      }, _react.default.createElement("p", null, "Email me through gmail ", _react.default.createElement("i", {
+        className: "fas fa-envelope"
+      }))), _react.default.createElement("p", {
+        href: "mailto:closcastillo95@gmail.com"
+      }, "Email me through your default mail application", _react.default.createElement("a", {
         href: "mailto:closcastillo95@gmail.com"
       }, _react.default.createElement("i", {
+        className: "fas fa-envelope"
+      }))), _react.default.createElement("a", {
+        href: "mailto:closcastillo95@gmail.com"
+      }, _react.default.createElement("p", null, "Email me through your default mail application ", _react.default.createElement("i", {
         className: "fas fa-envelope"
       }))))));
     }
@@ -32367,7 +32379,7 @@ function (_React$Component) {
       }, _react.default.createElement("h2", null, "Data Structure Projects"), _react.default.createElement("ul", {
         className: "data_structure_menu"
       }, _react.default.createElement("li", null, _react.default.createElement("a", {
-        onClick: this.webPageHandler.bind(this, "UnderConstruction")
+        onClick: this.linkHandler.bind(this, "https://github.com/AGuyNamedC-Los/data_structures/tree/master/DoublyLinkedList")
       }, _react.default.createElement("p", null, "Doubly Linked List"))))));
 
       return _react.default.createElement("div", {
@@ -32666,7 +32678,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57699" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53950" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -2,7 +2,10 @@
 	npm init
 	npm install react
 	npm install react-dom
-	npm install -g parcel-bundler
+	npm install npm install -g parcel-bundler
+	parcel build index.html --public-url ./		to create the dist file that goes into filezilla to be put online
+	npm install --save react react-copy-to-clipboard
+	http://csweb01.csueastbay.edu/~wi9937/carloscastillo/ is the website name for now
 */
 
 import React from "react";

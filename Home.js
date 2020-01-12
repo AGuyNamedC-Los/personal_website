@@ -44,7 +44,9 @@ class Home extends React.Component {
 					</p>
 					{/* email buttons */}
 					<p>Email me through gmail<a className="gmail" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=closcastillo95@gmail.com" target="_blank"><i className="fas fa-envelope"></i></a></p>
-					<p>Email me through your default mail application<a href="mailto:closcastillo95@gmail.com"><i className="fas fa-envelope"></i></a></p>  
+					<a className="gmail" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=closcastillo95@gmail.com" target="_blank"><p>Email me through gmail <i className="fas fa-envelope"></i></p></a>
+					<p href="mailto:closcastillo95@gmail.com">Email me through your default mail application<a href="mailto:closcastillo95@gmail.com"><i className="fas fa-envelope"></i></a></p>  
+					<a href="mailto:closcastillo95@gmail.com"><p>Email me through your default mail application <i className="fas fa-envelope"></i></p></a>  
 				</div>
 			</div>
 		</div>);
