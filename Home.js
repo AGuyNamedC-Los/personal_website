@@ -34,23 +34,30 @@ class Home extends React.Component {
 			{/* contact me section */}
 			<div className="contact_me">
 				<h2>Want to contact me?</h2>
-				<div className="contact_me_btns">
+				<ul className="contact_me_btns">
 					{/* copy button section */}
-					<p>Copy my email to clipboard	
-						<CopyToClipboard text={this.state.myEmail}
-							onCopy={() => this.setState({copied: true})}>
-							<a className="copybtn"><i className="fas fa-copy"></i></a>
-						</CopyToClipboard>
-					</p>
+					<li><CopyToClipboard text={this.state.myEmail}
+						onCopy={() => this.setState({copied: true})}>
+						<a className="copybtn"><p>Copy my email to clipboard<i className="fas fa-copy"></i></p></a>
+					</CopyToClipboard></li>
 					{/* email buttons */}
-					<p>Email me through gmail<a className="gmail" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=closcastillo95@gmail.com" target="_blank"><i className="fas fa-envelope"></i></a></p>
-					<a className="gmail" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=closcastillo95@gmail.com" target="_blank"><p>Email me through gmail <i className="fas fa-envelope"></i></p></a>
-					<p href="mailto:closcastillo95@gmail.com">Email me through your default mail application<a href="mailto:closcastillo95@gmail.com"><i className="fas fa-envelope"></i></a></p>  
-					<a href="mailto:closcastillo95@gmail.com"><p>Email me through your default mail application <i className="fas fa-envelope"></i></p></a>  
-				</div>
+					<li><a className="email_btn" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=closcastillo95@gmail.com" target="_blank"><p>Email me through gmail <i className="fas fa-envelope"></i></p></a></li>
+					<li><a className="email_btn" href="mailto:closcastillo95@gmail.com"><p>Email me through your default mail application <i className="fas fa-envelope"></i></p></a></li>
+				</ul>
 			</div>
 		</div>);
     }
 }
 
 export default Home;
+
+/*
+<p>Copy my email to clipboard	
+	<CopyToClipboard text={this.state.myEmail}
+		onCopy={() => this.setState({copied: true})}>
+		<a className="copybtn"><i className="fas fa-copy"></i></a>
+	</CopyToClipboard>
+</p>
+<p>Email me through gmail<a className="gmail" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=closcastillo95@gmail.com" target="_blank"><i className="fas fa-envelope"></i></a></p>
+<p href="mailto:closcastillo95@gmail.com">Email me through your default mail application<a href="mailto:closcastillo95@gmail.com"><i className="fas fa-envelope"></i></a></p>
+*/

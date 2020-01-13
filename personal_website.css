@@ -1,11 +1,13 @@
 body {
 	margin: 0px;
 	padding: 0px;
+	overflow-x:hidden;
 }
 
 main {
 	font-family: Times;
 	font-weight: normal;
+	border: solid;
 }
 
 main h1 {
@@ -26,9 +28,9 @@ main p {
 .menu {
 	background: #43498c;
 	text-align: center;
-	padding: 100px 0px 100px;
+	padding: 5% 0px 5%;
 	border: solid;
-	margin-bottom: 10px;
+	margin-bottom: 0px;
 }
 
 /* the main menu buttons*/
@@ -69,7 +71,6 @@ main p {
   display: none;
   position: absolute;
   background-color: red;
-  /* min-width: 160px; */
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -108,9 +109,8 @@ main p {
 
 /* --------------------- Home Page --------------------- */
 .home {
-	/*font-family: Times;
-	font-weight: normal;*/
-	margin: 0px 100px 100px;	/* top, left and right, bottom */
+	margin: 0px 0px 0px;	/* top, left and right, bottom */
+	border: solid;
 }
 
 .bitmoji {
@@ -123,34 +123,34 @@ main p {
 }
 
 .about_me {
-	font-size: 30px;
-	margin: 100px 100px 100px;
+	margin: 5% 15% 5%;
 }
 
 .about_me h2 {
-	font-size: 35px;
-	float: left;
+	/* float: left; */
 }
 
 .about_me p {
-	clear: left;
+	/* clear: left; */
 }
 
 .contact_me {
 	text-align: center;
 	font-size: 30px;
-	margin: 100px 100px 100px;
+	margin: 5% 0% 5%;
 }
 
 .contact_me .copybtn:hover {
 	color: red;
 }
 
-.contact_me_btns {
-	display: block;
+ul {
+	list-style: none;
 }
 
-.contact_me_btns p {
+.contact_me a {
+	display: inline-block;
+	margin: 10px 20px 10px;
 	background: white;
 	border: solid;
 	border-color: black;
@@ -160,26 +160,55 @@ main p {
 	overflow: hidden;
 	position: relative;
 	cursor: pointer;
-	margin: 10px 20% 20px;
+	text-decoration: none;
 }
 
-.contact_me_btns p:nth-child(1) {
-	margin-left: 870px;
-	margin-right: 870px;
+.contact_me_btns a p {
+	margin: 10px 10px 10px;
 }
 
-.contact_me_btns p:nth-child(2) {
-	margin-left: 890px;
-	margin-right: 890px;
+/*
+.contact_me_btns {
+	display: block;
 }
 
-.contact_me_btns p:nth-child(3) {
-	margin-left: 750px;
-	margin-right: 750px;
+.contact_me_btns a {
+	display: inline-block;
+	background: white;
+	border: solid;
+	border-color: black;
+	border-radius: 10px;
+	box-shadow: 0 5px 15px -5px #00000070;
+	color: #434db9;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
 }
+
+.email_btn p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.email_btn {
+	text-decoration: none;
+}
+
+.email_btn:nth-child(2) {
+	text-align: center;
+	margin: 0% 42% 0%;
+}
+
+.email_btn:nth-child(3) {
+	display: block;
+	text-align: center;
+	margin: 1% 32% 0px;
+}
+
+*/
 
 .contact_me_btns p i {
-	margin-left: 20px;
+	margin-left: 10px;
 	color: #434db9;
 }
 
@@ -306,6 +335,14 @@ main p {
 	text-align: center;
 }
 
+.bottom_page {
+	border: solid;
+	position: relative;
+	padding: 100px 0px 100px;
+	background-color: #434db9;
+}
+
+/*
 .bottom_page{
 	border:solid;
 	position: relative;
@@ -314,6 +351,6 @@ main p {
 	padding-top: 200px;
 	height: 100px;
 	width: 100%;
-	background-color:  #434db9;
+	background-color: #434db9;
 	text-align: center;
-}
+} */
