@@ -32,9 +32,9 @@ class MainApp extends React.Component {
 				</div>
 				{/* LinkedIn buttons */}
 				<div className="dropdown">
-					<a className="dropbtn" onClick={this.linkHandler.bind(this, "https://www.linkedin.com/in/carlos-augustine-castillo-1363a6133/")}><i className="fab fa-linkedin"></i></a>
+					<a className="dropbtn" onClick={this.linkHandler.bind(this, "https://www.linkedin.com/in/carlos-castillo-1363a6133/")}><i className="fab fa-linkedin"></i></a>
 					<div className="dropdown-content">
-						<a className="sub_btn" onClick={this.linkHandler.bind(this, "https://www.linkedin.com/in/carlos-augustine-castillo-1363a6133/")}>LinkedIn</a>
+						<a className="sub_btn" onClick={this.linkHandler.bind(this, "https://www.linkedin.com/in/carlos-castillo-1363a6133/")}>LinkedIn</a>
 					</div>
 				</div>
 				{/* GitHub buttons */}

@@ -32380,7 +32380,13 @@ function (_React$Component) {
         className: "data_structure_menu"
       }, _react.default.createElement("li", null, _react.default.createElement("a", {
         onClick: this.linkHandler.bind(this, "https://github.com/AGuyNamedC-Los/data_structures/tree/master/DoublyLinkedList")
-      }, _react.default.createElement("p", null, "Doubly Linked List"))))));
+      }, _react.default.createElement("p", null, "Doubly Linked List"))), _react.default.createElement("li", null, _react.default.createElement("a", {
+        onClick: this.linkHandler.bind(this, "https://github.com/AGuyNamedC-Los/data_structures/tree/master/BasicTree")
+      }, _react.default.createElement("p", null, "Basic Tree"))))), _react.default.createElement("div", {
+        className: "algorithm_projects"
+      }, _react.default.createElement("h2", null, "Algorithm Projects"), _react.default.createElement("ul", {
+        className: "algorithm_menu"
+      })));
 
       return _react.default.createElement("div", {
         className: "Projects"
@@ -32485,14 +32491,14 @@ function (_React$Component) {
         className: "dropdown"
       }, _react.default.createElement("a", {
         className: "dropbtn",
-        onClick: this.linkHandler.bind(this, "https://www.linkedin.com/in/carlos-augustine-castillo-1363a6133/")
+        onClick: this.linkHandler.bind(this, "https://www.linkedin.com/in/carlos-castillo-1363a6133/")
       }, _react.default.createElement("i", {
         className: "fab fa-linkedin"
       })), _react.default.createElement("div", {
         className: "dropdown-content"
       }, _react.default.createElement("a", {
         className: "sub_btn",
-        onClick: this.linkHandler.bind(this, "https://www.linkedin.com/in/carlos-augustine-castillo-1363a6133/")
+        onClick: this.linkHandler.bind(this, "https://www.linkedin.com/in/carlos-castillo-1363a6133/")
       }, "LinkedIn"))), _react.default.createElement("div", {
         className: "dropdown"
       }, _react.default.createElement("a", {
@@ -32678,7 +32684,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54036" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55644" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
