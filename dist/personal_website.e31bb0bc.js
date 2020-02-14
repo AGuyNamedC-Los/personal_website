@@ -32383,6 +32383,12 @@ function (_React$Component) {
       }, _react.default.createElement("p", null, "Doubly Linked List"))), _react.default.createElement("li", null, _react.default.createElement("a", {
         onClick: this.linkHandler.bind(this, "https://github.com/AGuyNamedC-Los/data_structures/tree/master/BasicTree")
       }, _react.default.createElement("p", null, "Basic Tree"))))), _react.default.createElement("div", {
+        className: "miscellaneous_projects"
+      }, _react.default.createElement("h2", null, "Miscellaneous"), _react.default.createElement("ul", {
+        className: "miscellaneous_menu"
+      }, _react.default.createElement("li", null, _react.default.createElement("a", {
+        onClick: this.linkHandler.bind(this, "https://github.com/AGuyNamedC-Los/connect-3")
+      }, _react.default.createElement("p", null, "Connect-3"))))), _react.default.createElement("div", {
         className: "algorithm_projects"
       }, _react.default.createElement("h2", null, "Algorithm Projects"), _react.default.createElement("ul", {
         className: "algorithm_menu"
@@ -32684,7 +32690,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59886" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59951" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

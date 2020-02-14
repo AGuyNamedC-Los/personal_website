@@ -37,6 +37,13 @@ class Projects extends React.Component {
 				</ul>
 			</div>
 			
+			<div className= "miscellaneous_projects">
+				<h2>Miscellaneous</h2>
+				<ul className="miscellaneous_menu">
+					<li><a onClick={this.linkHandler.bind(this, "https://github.com/AGuyNamedC-Los/connect-3")}><p>Connect-3</p></a></li>
+				</ul>
+			</div>
+			
 			<div className= "algorithm_projects">
 				<h2>Algorithm Projects</h2>
 				<ul className="algorithm_menu">

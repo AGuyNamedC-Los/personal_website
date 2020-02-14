@@ -227,6 +227,10 @@ ul {
 	border: solid;
 }
 
+.Projects p {
+
+}
+
 .Projects a {
 	display: inline-block;
 	margin: 10px 20px 10px;
@@ -249,7 +253,7 @@ ul {
 	margin: 10px 10px 10px;
 }
 
-.browser_projects_menu, .data_structure_menu {
+.browser_projects_menu, .data_structure_menu, .algorithm_menu, .miscellaneous_menu{
 	list-style: none;
 	text-align: center;
 	font-size: 30px;

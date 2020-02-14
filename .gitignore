@@ -8,3 +8,6 @@ node_modules
 
 # dependencies, change to ignore all node_modules dirs
 node_modules
+
+# ignore dist which is the files that put the react project on to a browser
+dist
