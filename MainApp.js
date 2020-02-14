@@ -60,9 +60,9 @@ class MainApp extends React.Component {
 				</div>
 				{/* Instagram buttons */}
 				<div className="dropdown">
-					<a className="dropbtn" onClick={this.webPageHandler.bind(this, "Home")}><i className="fab fa-instagram"></i></a>
+					<a className="dropbtn" onClick={this.linkHandler.bind(this, "https://www.instagram.com/aguynamedc_los/")}><i className="fab fa-instagram"></i></a>
 					<div className="dropdown-content">
-						<a className="sub_btn" onClick={this.webPageHandler.bind(this, "Home")}>Instagram</a>
+						<a className="sub_btn" onClick={this.linkHandler.bind(this, "https://www.instagram.com/aguynamedc_los/")}>Instagram</a>
 					</div>
 				</div>
 			</div>;

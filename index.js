@@ -6,6 +6,7 @@
 	parcel build index.html --public-url ./		to create the dist file that goes into filezilla to be put online
 	npm install --save react react-copy-to-clipboard
 	http://csweb01.csueastbay.edu/~wi9937/carloscastillo/ is the website name for now
+	parcel index.html in bash to get it running on localhost:1234
 */
 
 import React from "react";

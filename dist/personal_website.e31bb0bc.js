@@ -32373,7 +32373,7 @@ function (_React$Component) {
       }, _react.default.createElement("p", null, "This Website"))), _react.default.createElement("li", null, _react.default.createElement("a", {
         onClick: this.webPageHandler.bind(this, "SBMockify")
       }, _react.default.createElement("p", null, "Mockify"))), _react.default.createElement("li", null, _react.default.createElement("a", {
-        onClick: this.webPageHandler.bind(this, "UnderConstruction")
+        onClick: this.linkHandler.bind(this, "https://github.com/AGuyNamedC-Los/gift-ee")
       }, _react.default.createElement("p", null, "Giftee"))))), _react.default.createElement("div", {
         className: "data_structure_projects"
       }, _react.default.createElement("h2", null, "Data Structure Projects"), _react.default.createElement("ul", {
@@ -32539,14 +32539,14 @@ function (_React$Component) {
         className: "dropdown"
       }, _react.default.createElement("a", {
         className: "dropbtn",
-        onClick: this.webPageHandler.bind(this, "Home")
+        onClick: this.linkHandler.bind(this, "https://www.instagram.com/aguynamedc_los/")
       }, _react.default.createElement("i", {
         className: "fab fa-instagram"
       })), _react.default.createElement("div", {
         className: "dropdown-content"
       }, _react.default.createElement("a", {
         className: "sub_btn",
-        onClick: this.webPageHandler.bind(this, "Home")
+        onClick: this.linkHandler.bind(this, "https://www.instagram.com/aguynamedc_los/")
       }, "Instagram"))));
 
       var content = _react.default.createElement(_Home.default, null);
@@ -32684,7 +32684,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55644" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59620" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

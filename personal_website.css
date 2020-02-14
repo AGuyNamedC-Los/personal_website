@@ -123,7 +123,7 @@ main p {
 }
 
 .about_me {
-	margin: 5% 15% 5%;
+	margin: 5% 30% 5%;
 }
 
 .about_me h2 {
@@ -212,11 +212,11 @@ ul {
 	color: #434db9;
 }
 
-.contact_me_btns p:hover{
+.contact_me_btns p:hover {
 	color: red;
 }
- 
-.contact_me_btns p a:hover i {
+
+.contact_me_btns i:hover {
 	color: red;
 }
 
@@ -238,6 +238,10 @@ ul {
 	overflow: hidden;
 	position: relative;
 	cursor: pointer;
+}
+
+.Projects a:hover {
+	color: red;
 }
 
 .Projects a p {

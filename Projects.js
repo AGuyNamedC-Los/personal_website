@@ -25,7 +25,7 @@ class Projects extends React.Component {
 				<ul className="browser_projects_menu">
 					<li><a onClick={this.linkHandler.bind(this, "https://github.com/AGuyNamedC-Los/personal_website")}><p>This Website</p></a></li>
 					<li><a onClick={this.webPageHandler.bind(this, "SBMockify")}><p>Mockify</p></a></li>
-					<li><a onClick={this.webPageHandler.bind(this, "UnderConstruction")}><p>Giftee</p></a></li>
+					<li><a onClick={this.linkHandler.bind(this, "https://github.com/AGuyNamedC-Los/gift-ee")}><p>Giftee</p></a></li>
 				</ul>
 			</div>
 			
